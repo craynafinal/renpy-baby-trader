@@ -1,0 +1,129 @@
+# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+define ch_test = Character("Test", color = "#000000")
+define ch_test2 = Character("Test2", color = "#123123")
+
+define narrator = Character(None, kind = nvl)
+define ch_narrator = Character(None)
+
+image bg_test = "bg/bg_test.png"
+image bg_test2 = "bg/bg_test2.jpg"
+
+image scg_test normal:
+    im.FactorScale("ch/ch_test.png", 0.9)
+    yalign 0.0
+
+image scg_test2:
+    im.FactorScale("ch/ch_test2.png", 1.6)
+    yalign 0.0
+
+
+#redefine position values
+#define center = Position(xalign = 0.5, yalign = 0.0)
+define center = Position(xalign = 0.5)
+define left = Position(xalign = 0.2)
+define right = Position(xalign = 0.8)
+
+# The game starts here.
+
+label start:
+    # int, string, fp, boolean
+    $var = 0
+
+    # Show a background. This uses a placeholder by default, but you can
+    # add a file (named either "bg room.png" or "bg room.jpg") to the
+    # images directory to show it.
+
+    #scene bg room
+    scene bg_test with fade
+
+    # This shows a character sprite. A placeholder is used, but you can
+    # replace it by adding a file named "eileen happy.png" to the images
+    # directory.
+
+    #show eileen happy
+    # dissove is for transition animation
+    show scg_test normal at left with dissolve
+    show scg_test2 at right with dissolve
+    # left, center, right, truecenter
+
+    # These display lines of dialogue.
+
+    #list_ = open("word.txt").read().split()
+    $list = renpy.file("word.txt").read().split()
+
+    #"[list[0]]"
+
+    $list_size = len(list)
+    $i = 0
+    "[list_size]"
+
+    while i < list_size:
+        $word = list[i]
+        "[word]"
+        $i += 1
+
+    $mood = _("happy")
+
+    "[mood!t]"
+
+    "사운드노벨 나레이션"
+
+    nvl clear
+
+    ch_test "You've created a new Ren'Py game."
+    
+    ch_narrator "비쥬얼노벨 나레이션"
+
+    ch_test "Once you add a story, pictures, and music, you can release it to the world!"
+
+    ch_test2 "Selection starts"
+
+    menu:
+        "Choice 1":
+            ch_test "Result of choice 1"
+            $var = var + 1
+        "Choice 2":
+            ch_test2 "Result of choice 2"
+            $var = var + 2
+
+    ch_test2 "Selection is over"
+    # This ends the game.
+
+    # and or
+    if(var <= 1):
+        ch_narrator "1"
+        jump ending_good
+    else:
+        ch_narrator "2"
+        # if call, it will come back to here
+        call ending_bad
+
+    #hide scg_test with dissolve
+
+    # apply dissolve for both
+    hide scg_test
+    hide scg_test2
+    with dissolve
+
+    ch_test2 "Test is gone"
+
+    # this will remove character images already displayed
+    scene bg_test2 with fade
+
+    ch_test "New BG"
+
+    return
+
+label ending_good:
+    scene bg_test2 with fade
+    ch_test "good ending"
+    return
+
+label ending_bad:
+    scene bg_test2 with fade
+    ch_test "bad ending"
+    return

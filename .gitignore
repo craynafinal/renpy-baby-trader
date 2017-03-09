@@ -1,89 +1,76 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+*.rpyc
+*.rpyb
+*.rpymc
+*.pyc
+*.pyo
 
-# C extensions
-*.so
+*~
+*.bak
 
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
+saves
+tmp
+cache
+env
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+log.txt
+errors.txt
+traceback.txt
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+styles.txt
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*,cover
-.hypothesis/
+/gui/game/gui
 
-# Translations
-*.mo
-*.pot
+/android
+/build
+/dist
+/dists
+/renpy.app
+/jedit
+/lint.txt
+/renpy.code
+/*testing*
+/screenshot*
+/renpy.exe
+/lib
+/lib.old
+/doc
+/.pydevproject
+/.pydevproject.bak
+/.project
+/.cproject
+/.settings
+/LICENSE.txt
+/templates/english/README.html
+/the_question/README.html
+/tutorial/README.html
+/renpy/angle/*.pyx
+/renpy/angle/*.pxd
+/renpy-ppc.zip
+/module/build
+/module/gen*
+/editra
+/launcher/game/theme
+/launcher/game/script_version.rpy
 
-# Django stuff:
-*.log
-local_settings.py
+/dl
+renpy/vc_version.py
+.externalToolBuilders
+/rapt
+/evil
+/iaptest
+/pygame_sdl2
+/renios
+/steam_appid.txt
+/.coverage
+/id
+/interface_7
+/htmlcov
+/the_question/.android.json
+/WINDOWS.rst
 
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# IPython Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# celery beat schedule file
-celerybeat-schedule
-
-# dotenv
-.env
-
-# virtualenv
-venv/
-ENV/
-
-# Spyder project settings
-.spyderproject
-
-# Rope project settings
-.ropeproject
+/*-all/
+/*-win/
+/*-mac/
+/*-linux*/
+/*-dists/
+doc-web
