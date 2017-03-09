@@ -3,15 +3,21 @@ label common_1:
 
     $renpy.pause(3.0, hard = True)
 
+    play sound sound_face_hit_1
+
     ch_narrator "짝!"
 
     ch_boy "(TV나 전단지를 보면 종종 그런 장면들이 있다.)"
 
     ch_boy "(엄마, 아빠, 그리고 아이가 행복하게 웃으며 즐거운 시간을 보내고 있는 모습.)"
 
+    play sound sound_face_hit_2
+
     ch_narrator "퍽!"
 
     ch_boy "(그런 사진이나 광고를 보고 있으면 정말 마음이 따뜻해져서 기분이 좋았다.)"
+
+    play sound sound_face_hit_1
 
     ch_narrator "짝!"
 
@@ -19,13 +25,20 @@ label common_1:
 
     ch_boy "(어째서 그 사람들은 그렇게 즐겁게 웃을 수 있는 것일까?)"
 
+    play sound sound_face_hit_3
+
     ch_narrator "쿵!"
 
     ch_boy "(나는... 항상...)"
 
-    ch_narrator "퍽!!"
+    play sound sound_face_hit_2
+
+    ch_narrator "퍽!"
 
     ch_mother "너는 왜 이모양이니?!"
+
+    # show bg here with fade
+    play music bgm_boat_floating
 
     ch_narrator "배를 감싸안은 채 쓰러져 있는 [ch_boy]의 어머니로 보이는 여자는 많은 X 표시가 보이는 시험지를 펄럭이며 화를 내고 있다."
 
@@ -36,14 +49,18 @@ label common_1:
     ch_mother "지금 말대꾸 하는거니?! 그리고 그게 뭐 어쨌다고 그러는거니! 옆집 성호는 벌써 초등학생이 풀 문제를 푼다고 하더라! 너 같은 열등한 아이가 내 아들이라니..."
 
     ch_narrator "[ch_boy]은 뭐라 대꾸 할 말을 찾지 못하고 고개를 떨구고 눈을 감았다."
-
-    ch_narrator "\"그래, 조금만 참으면 돼. 항상 그래왔잖아? 조금만 더.\""
     
-    ch_narrator "\"끝나면 밖에 나가서 소리내어 조금 울고 들어오자. 그리고 어두워지면 돌아와서 자면 되는거야.\" [ch_boy]은 그렇게 생각했다."
+    ch_narrator "그리고 생각했다."
+
+    ch_narrator "(그래, 조금만 참으면 돼. 항상 그래왔잖아? 조금만 더.)"
+    
+    ch_narrator "(끝나면 밖에 나가서 소리내어 조금 울고 들어오자. 그리고 어두워지면 돌아와서 자면 되는거야.)"
 
     ch_narrator "하지만 그 날은 [ch_boy]의 생각과는 조금 달랐다."
 
     ch_mother "더 이상은 안되겠어. 이젠 못 참아! 당장 너를 [ch_babyTrader]에게 데려가야 겠어."
+
+    play sound sound_shock
 
     ch_narrator "갑자기 가슴을 큰 망치로 두드려 맞은 것 같은 느낌이 들었다. 가슴이 저리고 머리가 어지러웠다. [ch_boy]은 지금 빨리 어머니의 마음을 돌리지 않으면 안될 것 같은 느낌이 들었다."
     
@@ -65,4 +82,5 @@ label common_1:
 
     ch_narrator "어머니는 [ch_boy]의 손을 강제로 잡고 문 밖을 나섰다. 그는 저항하려 했으나 어린 아이의 힘으로는 어쩔 도리가 없었다. 마치 바닥에 끌리는 자루처럼 어머니에게 이끌려갔다."
 
+    stop music fadeout 1.0
     jump common_2

@@ -1,6 +1,4 @@
 label prologue:
-
-    #play music "sound/bgm/bgm_rain.ogg" fadein 4.0
     scene bg_black
 
     $renpy.pause(1.0, hard = True)
@@ -10,6 +8,7 @@ label prologue:
     hide bg_black
     scene bg_prologue with fade
     show scg_babyTrader normal with dissolve
+    play music bgm_strange_ways
 
     ch_babyTrader "사람들은 저를 [ch_babyTrader]이라고 부르지요."
 
@@ -50,6 +49,6 @@ label prologue:
     hide scg_babyTrader
     hide bg_prologue
     with dissolve
-    
+    stop music fadeout 3.0
     jump common_1
 
